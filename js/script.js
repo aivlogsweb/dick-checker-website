@@ -443,7 +443,15 @@ class DickSizeChecker {
     this.elements.unitDisplay.textContent = results.unit;
     this.elements.resultDescription.textContent = results.description;
     this.elements.confidencePercentage.textContent = `${results.confidence}%`;
-    this.elements.percentileNumber.textContent = results.percentile;
+    
+    // Debug and set percentile
+    console.log('Percentile result:', results.percentile);
+    console.log('Percentile element:', this.elements.percentileNumber);
+    if (this.elements.percentileNumber) {
+      this.elements.percentileNumber.textContent = results.percentile;
+    } else {
+      console.error('Percentile element not found!');
+    }
     
     // Animate confidence bar
     setTimeout(() => {
