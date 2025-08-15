@@ -2,13 +2,9 @@
   "name": "dick-size-checker",
   "version": "1.0.0",
   "description": "A humorous parody website that generates random 'measurements' based on Twitter usernames",
-  "main": "index.html",
   "scripts": {
     "dev": "npx http-server . -p 3000 -c-1 -o",
-    "build": "echo 'No build process needed for static site'",
     "start": "npx http-server . -p 8080 -c-1",
-    "test": "echo 'No tests configured'",
-    "lint": "echo 'No linting configured'",
     "validate": "node scripts/validate.js",
     "optimize": "node scripts/optimize.js"
   },

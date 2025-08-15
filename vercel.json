@@ -1,30 +1,6 @@
 {
-  "version": 2,
-  "public": true,
-  "github": {
-    "silent": true
-  },
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
-    }
-  },
-  "functions": {
-    "app.js": {
-      "runtime": "nodejs18.x",
-      "maxDuration": 10
-    }
-  },
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",
@@ -44,10 +20,6 @@
         {
           "key": "Referrer-Policy",
           "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://twitter.com; frame-ancestors 'none';"
         }
       ]
     },
@@ -77,15 +49,6 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
-    },
-    {
-      "source": "/(.*\\.(ico|png|jpg|jpeg|gif|svg|webp))",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
     }
   ],
   "redirects": [
@@ -99,7 +62,5 @@
       "destination": "/?modal=privacy", 
       "permanent": false
     }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false
+  ]
 }
