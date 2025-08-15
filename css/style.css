@@ -195,6 +195,7 @@ header {
   padding: var(--spacing-sm);
   transition: all var(--transition-normal);
   box-shadow: var(--shadow-sm);
+  min-height: 3rem;
 }
 
 .input-wrapper:focus-within {
@@ -209,6 +210,10 @@ header {
   color: var(--primary-color);
   padding: 0 var(--spacing-sm);
   user-select: none;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 #username-input {
@@ -221,6 +226,9 @@ header {
   padding: var(--spacing-md);
   outline: none;
   font-family: var(--font-mono);
+  line-height: 1;
+  height: auto;
+  min-height: 1.5rem;
 }
 
 #username-input::placeholder {
