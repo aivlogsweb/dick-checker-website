@@ -1,0 +1,45 @@
+{
+  "name": "dick-size-checker",
+  "version": "1.0.0",
+  "description": "A humorous parody website that generates random 'measurements' based on Twitter usernames",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server . -p 3000 -c-1 -o",
+    "build": "echo 'No build process needed for static site'",
+    "start": "npx http-server . -p 8080 -c-1",
+    "test": "echo 'No tests configured'",
+    "lint": "echo 'No linting configured'",
+    "validate": "node scripts/validate.js",
+    "optimize": "node scripts/optimize.js"
+  },
+  "keywords": [
+    "humor",
+    "parody",
+    "twitter",
+    "entertainment",
+    "funny",
+    "social-media"
+  ],
+  "author": "Dick Size Checker Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/dick-size-checker"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/dick-size-checker/issues"
+  },
+  "homepage": "https://dick-size-checker.vercel.app",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}

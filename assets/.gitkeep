@@ -1,0 +1,23 @@
+# Assets Directory
+
+This directory contains static assets like images, icons, and other media files.
+
+## Required Files:
+- favicon.ico - Website favicon
+- apple-touch-icon.png - iOS home screen icon (180x180px)
+- og-image.png - Open Graph image for social sharing (1200x630px)
+
+## Recommended Sizes:
+- favicon.ico: 32x32px (with 16x16px fallback)
+- apple-touch-icon.png: 180x180px
+- og-image.png: 1200x630px
+
+## File Formats:
+- Use WebP for images when possible for better compression
+- Include PNG fallbacks for broader compatibility
+- SVG for icons and simple graphics
+
+## Optimization:
+- Compress all images before deployment
+- Use appropriate file formats for each use case
+- Consider lazy loading for non-critical images

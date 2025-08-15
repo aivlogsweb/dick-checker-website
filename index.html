@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Check the dick size of any Twitter (𝕏) user. Fun entertainment tool with humorous results based on tweet analysis.">
+    <meta name="keywords" content="dick size checker, twitter analyzer, fun tool, entertainment, social media">
+    <meta name="author" content="Dick Size Checker">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="Dick Size Checker - Analyze Twitter Users">
+    <meta property="og:description" content="Check the dick size of any Twitter (𝕏) user. Fun entertainment tool with humorous results.">
+    <meta property="og:image" content="/assets/og-image.png">
+    <meta property="og:site_name" content="Dick Size Checker">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="">
+    <meta property="twitter:title" content="Dick Size Checker - Analyze Twitter Users">
+    <meta property="twitter:description" content="Check the dick size of any Twitter (𝕏) user. Fun entertainment tool with humorous results.">
+    <meta property="twitter:image" content="/assets/og-image.png">
+    
+    <!-- PWA -->
+    <meta name="theme-color" content="#1DA1F2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Dick Size Checker">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/script.js" as="script">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <title>Dick Size Checker - Analyze Twitter Users</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="main-title">
+                <span class="title-icon">🍆</span>
+                Dick Size Checker
+            </h1>
+            <p class="subtitle">Check the dick size of any Twitter (𝕏) user</p>
+        </header>
+
+        <main>
+            <!-- Initial Form -->
+            <section id="input-section" class="input-section">
+                <form id="checker-form" class="checker-form">
+                    <div class="input-group">
+                        <label for="username-input" class="sr-only">Twitter Username</label>
+                        <div class="input-wrapper">
+                            <span class="input-prefix">@</span>
+                            <input 
+                                type="text" 
+                                id="username-input" 
+                                name="username"
+                                placeholder="elonmusk"
+                                autocomplete="off"
+                                autocapitalize="off"
+                                spellcheck="false"
+                                maxlength="15"
+                                pattern="[A-Za-z0-9_]+"
+                                required
+                            >
+                        </div>
+                        <button type="submit" class="check-btn">
+                            <span class="btn-text">Check Size</span>
+                            <span class="btn-icon">📏</span>
+                        </button>
+                    </div>
+                    <p class="input-hint">Enter any Twitter/𝕏 username (without the @)</p>
+                </form>
+            </section>
+
+            <!-- Loading State -->
+            <section id="loading-section" class="loading-section hidden">
+                <div class="loading-animation">
+                    <div class="spinner"></div>
+                    <div class="loading-text">
+                        <p id="loading-message">Analyzing tweets...</p>
+                        <div class="loading-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results -->
+            <section id="results-section" class="results-section hidden">
+                <div class="result-card">
+                    <div class="result-header">
+                        <h2 id="result-username"></h2>
+                        <div class="measurement-display">
+                            <span class="size-number" id="size-display"></span>
+                            <span class="size-unit" id="unit-display"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="result-body">
+                        <p id="result-description" class="result-description"></p>
+                        <div class="confidence-bar">
+                            <div class="confidence-label">Accuracy Level:</div>
+                            <div class="confidence-meter">
+                                <div class="confidence-fill" id="confidence-fill"></div>
+                            </div>
+                            <div class="confidence-percentage" id="confidence-percentage"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="result-actions">
+                        <button class="share-btn" id="share-btn">
+                            <span>Share on 𝕏</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </button>
+                        <button class="try-again-btn" id="try-again-btn">
+                            <span>Try Another</span>
+                            <span>🔄</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="disclaimer">
+                <p>⚠️ This is for entertainment only. Results are randomly generated and not based on real data.</p>
+                <p>Made with 🍆 and a sense of humor</p>
+            </div>
+            <div class="footer-links">
+                <a href="#" id="about-link">About</a>
+                <span>•</span>
+                <a href="#" id="privacy-link">Privacy</a>
+                <span>•</span>
+                <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- About Modal -->
+    <div id="about-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>About Dick Size Checker</h3>
+                <button class="modal-close" id="close-about">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>This is a humorous parody website that generates random "measurements" based on Twitter usernames.</p>
+                <p>No actual analysis is performed - it's all just for fun! The results are generated using a hash of the username to ensure consistency.</p>
+                <p><strong>Features:</strong></p>
+                <ul>
+                    <li>🎲 Consistent random generation</li>
+                    <li>📱 Mobile-optimized design</li>
+                    <li>🚀 Lightning-fast performance</li>
+                    <li>😂 Hilarious descriptions</li>
+                    <li>🔗 Easy sharing</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Modal -->
+    <div id="privacy-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Privacy Policy</h3>
+                <button class="modal-close" id="close-privacy">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Data Collection:</strong> We don't collect any personal data. Usernames are processed locally in your browser.</p>
+                <p><strong>Analytics:</strong> We may use anonymous analytics to improve the site.</p>
+                <p><strong>Third-party Services:</strong> Sharing links use Twitter's native sharing, which follows their privacy policy.</p>
+                <p><strong>Storage:</strong> No data is stored on our servers. Everything happens in your browser.</p>
+                <p>This site is for entertainment only and doesn't actually analyze social media accounts.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
