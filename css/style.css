@@ -771,13 +771,7 @@ footer {
   }
   
   .input-wrapper {
-    flex-direction: column;
-    gap: var(--spacing-sm);
     padding: var(--spacing-md);
-  }
-  
-  .input-prefix {
-    align-self: flex-start;
   }
 }
 
