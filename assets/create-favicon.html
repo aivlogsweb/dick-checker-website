@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favicon Creator</title>
+</head>
+<body>
+    <canvas id="favicon" width="32" height="32" style="border: 1px solid #ccc; transform: scale(10);"></canvas>
+    
+    <script>
+        const canvas = document.getElementById('favicon');
+        const ctx = canvas.getContext('2d');
+        
+        // Clear canvas
+        ctx.fillStyle = 'transparent';
+        ctx.fillRect(0, 0, 32, 32);
+        
+        // Draw eggplant shape
+        // Main body (purple)
+        ctx.fillStyle = '#6B46C1';
+        ctx.beginPath();
+        ctx.ellipse(16, 20, 7, 9, 0, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        // Top curve
+        ctx.fillStyle = '#7C3AED';
+        ctx.beginPath();
+        ctx.ellipse(16, 12, 5, 3, 0, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        // Stem/leaf
+        ctx.fillStyle = '#16A34A';
+        ctx.beginPath();
+        ctx.ellipse(16, 8, 2, 1.5, 0, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        // Small highlight
+        ctx.fillStyle = '#8B5CF6';
+        ctx.globalAlpha = 0.6;
+        ctx.beginPath();
+        ctx.ellipse(13, 16, 1.5, 2, 0, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        console.log('Eggplant favicon created!');
+        
+        // Convert to data URL
+        const dataURL = canvas.toDataURL('image/png');
+        console.log('Data URL:', dataURL);
+    </script>
+</body>
+</html>

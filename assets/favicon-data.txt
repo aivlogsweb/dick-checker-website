@@ -1,0 +1,4 @@
+<!-- This file contains the base64 data for a purple eggplant favicon -->
+<!-- We'll create a simple 16x16 and 32x32 ICO file -->
+
+For now, we can use the SVG as favicon in modern browsers, and create a simple purple square as fallback.
