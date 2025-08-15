@@ -20,48 +20,75 @@ class DickSizeChecker {
     
     this.humorousDescriptions = [
       {
-        range: [3, 4],
+        range: [1.0, 2.5],
         descriptions: [
-          "Small but mighty! Like a fun-size candy bar - concentrated goodness that packs a punch. Quality over quantity, my friend! 🍬",
-          "A perfectly compact package! Sometimes the best things come in smaller sizes. You're probably really good with your hands! 👌",
-          "Bite-sized excellence! You've mastered the art of efficiency. Why use more when less gets the job done perfectly? 🎯",
-          "Pocket rocket! Small, portable, and probably gets invited to more parties. You're the life-size action figure of personalities! 🚀"
+          "Micro but mighty! You're like a secret agent gadget - small, discreet, but probably saves the world daily! 🕵️",
+          "Minimalist masterpiece! You've embraced the 'less is more' philosophy. Probably a connoisseur of tiny house living! 🏠",
+          "Button-sized brilliance! Like a perfectly crafted espresso shot - small but packs an incredible punch! ☕",
+          "Stealth mode activated! You're the ninja of measurements - what you lack in size, you make up for in pure skill! 🥷"
+        ]
+      },
+      {
+        range: [2.6, 4.0],
+        descriptions: [
+          "Compact and clever! Like a Swiss watch - small, precise, and probably worth more than people realize! ⌚",
+          "Fun-size energy! You're the travel-size version of awesome - portable, efficient, and TSA-approved! ✈️",
+          "Bite-sized excellence! You've mastered the art of doing more with less. Efficiency expert level: Pro! 🎯",
+          "Pocket rocket vibes! Small engine, big performance. You're probably really good at parallel parking! 🚗"
         ]
       },
       {
         range: [4.1, 5.5],
         descriptions: [
-          "Solidly average and proud of it! You're the reliable Honda Civic of personalities - dependable, efficient, and surprisingly fun! 🚗",
-          "Right in the sweet spot! Not too much, not too little - you're the Goldilocks of measurements. Just right for any situation! 🐻",
-          "Perfectly standard! You're like a good pair of jeans - comfortable, reliable, and suitable for most occasions. Classic choice! 👖",
-          "The people's champion! You represent the everyman with dignity and style. Democracy in action, my friend! 🗳️"
+          "Solidly reliable! You're the Honda Civic of measurements - dependable, efficient, and surprisingly fun! 🚙",
+          "Classic proportions! Not too big, not too small - you're the Goldilocks zone of measurements! 🐻",
+          "Perfectly standard! You represent the everyman with dignity and style. Democracy in action! 🗳️",
+          "Comfortable confidence! Like a good pair of jeans - fits just right and goes with everything! 👖"
         ]
       },
       {
-        range: [5.6, 7],
+        range: [5.6, 7.0],
         descriptions: [
-          "Above average and loving life! You're like a premium coffee - a little extra kick that makes everything better! ☕",
-          "Impressive proportions! You've got that perfect balance of confidence and humility. The Swiss Army knife of personalities! 🔧",
-          "Solid measurements! You're probably the type who reads instruction manuals and actually follows them. Respect! 📋",
-          "Well-endowed in the personality department! You bring just the right amount of everything to the table. Balanced diet of awesomeness! 🍽️"
+          "Above average achievement! You're like premium coffee - that extra kick that makes everything better! ☕",
+          "Impressive balance! Perfect mix of confidence and humility. The Swiss Army knife of personalities! 🔧",
+          "Solid measurements! You probably read instruction manuals AND actually follow them. Respect! 📋",
+          "Well-proportioned wisdom! You bring just the right amount of everything to the table! 🍽️"
         ]
       },
       {
         range: [7.1, 8.5],
         descriptions: [
-          "Getting into impressive territory! You're like a luxury sedan - spacious, comfortable, and makes people a little jealous! 🚙",
-          "Substantial measurements! You probably give great hugs and have strong opinions about pizza toppings. Living your best life! 🍕",
-          "Confidently proportioned! You're the type who doesn't need to honk in traffic - your presence speaks for itself! 📯",
-          "Generous dimensions! You probably tip well and remember people's birthdays. Big heart, big personality! 💝"
+          "Getting serious now! You're like a luxury sedan - spacious, comfortable, and makes people jealous! 🚙",
+          "Substantial presence! You probably give amazing hugs and have strong opinions about pizza toppings! 🍕",
+          "Confident proportions! You don't need to honk in traffic - your presence speaks for itself! 📯",
+          "Generous dimensions! You probably tip well and remember everyone's birthday. Big heart energy! 💝"
         ]
       },
       {
-        range: [8.6, 10],
+        range: [8.6, 10.0],
         descriptions: [
-          "Absolutely massive energy! You're like a pickup truck - practical, powerful, and probably really good at moving furniture! 🛻",
-          "Legendary proportions! You probably have to duck through doorways and your personality fills entire rooms! 🚪",
-          "Maximum measurements! You're living proof that some people just hit the genetic lottery. Probably great at reaching high shelves! 🎰",
-          "Enormous presence! You're like a gentle giant - intimidating at first glance but probably gives the best bear hugs in history! 🐻"
+          "Seriously impressive! You're like a pickup truck - practical, powerful, and great at moving furniture! 🛻",
+          "Big league player! You probably have to duck through doorways and your personality fills rooms! 🚪",
+          "Major measurements! Living proof some people hit the genetic lottery. Great at reaching high shelves! 🎰",
+          "Gentle giant energy! Intimidating at first glance but probably gives the best bear hugs in history! 🐻"
+        ]
+      },
+      {
+        range: [10.1, 11.5],
+        descriptions: [
+          "Legendary status unlocked! You're like a monster truck - impressive, powerful, and turns heads everywhere! 🚛",
+          "Absolutely massive! You probably need custom everything and your shadow has its own zip code! 🌘",
+          "Epic proportions! You're basically a walking conversation starter. Airport security probably knows you by name! 🛂",
+          "Titan-level measurements! You're the final boss of measurements. Probably need a permit for that thing! 📜"
+        ]
+      },
+      {
+        range: [11.6, 13.0],
+        descriptions: [
+          "MAXIMUM OVERDRIVE! You've transcended human measurements and entered mythical territory! 🐉",
+          "Cosmic-level proportions! NASA probably wants to study you. You're basically a natural wonder! 🌌",
+          "Legendary mythical status! Ancient civilizations would have written epic poems about your measurements! 📜",
+          "Ultimate final form! You've maxed out the character creation slider. Probably need planning permission! 🏗️"
         ]
       }
     ];
@@ -84,6 +111,7 @@ class DickSizeChecker {
       resultDescription: document.getElementById('result-description'),
       confidenceFill: document.getElementById('confidence-fill'),
       confidencePercentage: document.getElementById('confidence-percentage'),
+      percentileNumber: document.getElementById('percentile-number'),
       shareBtn: document.getElementById('share-btn'),
       tryAgainBtn: document.getElementById('try-again-btn'),
       aboutModal: document.getElementById('about-modal'),
@@ -297,8 +325,8 @@ class DickSizeChecker {
   generateResults(username) {
     const hash = this.hashUsername(username);
     
-    // Generate size (3-10 inches) with bias toward middle values
-    const sizeFloat = this.normalDistribution(hash, 3, 10, 6.5);
+    // Generate size (1-13 inches) with bias toward middle values
+    const sizeFloat = this.normalDistribution(hash, 1, 13, 6.5);
     const size = Math.round(sizeFloat * 10) / 10; // Round to 1 decimal
     
     // Generate confidence (75-99%)
@@ -307,14 +335,19 @@ class DickSizeChecker {
     // Select appropriate description
     const description = this.getDescriptionForSize(size, hash);
     
+    // Calculate percentile (what % of people you're bigger than)
+    const percentile = this.calculatePercentile(size);
+    
     // Determine units (mostly inches, some cm for variety)
     const useMetric = hash % 10 === 0; // 10% chance for metric
     
     return {
       size: useMetric ? Math.round(size * 2.54 * 10) / 10 : size,
+      originalSize: size, // Keep original for percentile calculation
       unit: useMetric ? 'cm' : 'inches',
       confidence,
-      description
+      description,
+      percentile
     };
   }
 
@@ -360,6 +393,33 @@ class DickSizeChecker {
   }
 
   /**
+   * Calculate percentile (what percentage of people you're bigger than)
+   * Based on our 1-13 inch scale with normal distribution centered at 6.5
+   */
+  calculatePercentile(size) {
+    // Convert to percentile based on normal distribution
+    // Our scale: 1-13 inches, mean 6.5, we'll use standard deviation of ~2
+    const mean = 6.5;
+    const stdDev = 2;
+    
+    // Z-score calculation
+    const zScore = (size - mean) / stdDev;
+    
+    // Convert z-score to percentile using approximation
+    // This gives us a realistic distribution where 6.5" = 50th percentile
+    let percentile;
+    if (zScore <= -3) percentile = 1;
+    else if (zScore >= 3) percentile = 99;
+    else {
+      // Simplified normal distribution approximation
+      percentile = Math.round(50 + (zScore * 16.67)); // Roughly converts z-score to percentile
+      percentile = Math.max(1, Math.min(99, percentile)); // Clamp between 1-99
+    }
+    
+    return percentile;
+  }
+
+  /**
    * Get appropriate description for size
    */
   getDescriptionForSize(size, hash) {
@@ -383,6 +443,7 @@ class DickSizeChecker {
     this.elements.unitDisplay.textContent = results.unit;
     this.elements.resultDescription.textContent = results.description;
     this.elements.confidencePercentage.textContent = `${results.confidence}%`;
+    this.elements.percentileNumber.textContent = results.percentile;
     
     // Animate confidence bar
     setTimeout(() => {
